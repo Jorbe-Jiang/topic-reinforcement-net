@@ -125,7 +125,7 @@ function test_model()
 	print('Loading model from: '..opt.load_model_file..'...')
 	local model_and_opts = torch.load(opt.load_model_file)
 	local model = model_and_opts[1]
-	opt = model_and_opts[2]
+	--opt = model_and_opts[2]
 	
 	test(model, batches_test_data)
 end
