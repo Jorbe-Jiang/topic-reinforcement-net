@@ -715,6 +715,13 @@ function train(model, policy_net_criterion, batches_train_data, batches_valid_da
 			print('Evaluating end ...')
 			eval_policy_net_losses = {}
 			eval_val_net_losses = {}
+			if opt.gpu_id >= 0 then
+				hred_enc:cuda()
+				topic_net:cuda()
+				policy_net:cuda()
+				hred_enc_rnn:cuda()
+				policy_net_rnn:cuda()
+			end
 		end
 		collectgarbage()
 	end
